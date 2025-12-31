@@ -120,13 +120,13 @@ jobs:
             cd go-app-devops
             ls -la charts/  # Debug
             sed -i 's/tag: .*/tag: "${{github.run_id}}"/' charts/values.yaml
-            
+
       - name: Pushing changes
         run: |
           cd go-app-devops
           git config --global user.email "imranarkaws@gmail.com"
           git config --global user.name "imrankazi-cloud"
-          git add values.yaml
+          git add charts/values.yaml
           git commit -am "Updated values.yaml file"
           git push
 
