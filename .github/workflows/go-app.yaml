@@ -40,10 +40,10 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Run golang-lint
+    - name: golangci-lint
       uses: golangci/golangci-lint-action@v6
       with:
-        version: v1.56.2
+        version: v1.62.1 
         
   Docker-Image-Push: 
     runs-on: ubuntu-latest
