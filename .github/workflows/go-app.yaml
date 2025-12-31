@@ -93,7 +93,7 @@ jobs:
         id: docker-scout
         uses: docker/scout-action@v1
         with:
-          image: ${{ needs.Docker-Image-Push.outputs.image-tags }}  # ✅ Use job output
+          image: ${{ secrets.DOCKER_USERNAME }}/go-port:${{ github.run_id }}  # ✅ Use job output
           command: cves,recommendations
           ignore-unchanged: true
           only-severities: critical,high
