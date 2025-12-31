@@ -43,7 +43,10 @@ jobs:
     - name: golangci-lint
       uses: golangci/golangci-lint-action@v6
       with:
-        version: v1.60.0 
+        version: latest
+        install-mode: binary
+        skip-cache: false
+    
         
   Docker-Image-Push: 
     runs-on: ubuntu-latest
