@@ -113,7 +113,7 @@ jobs:
           owner: 'imrankazi-cloud'
           repository: 'go-app-devops'
           access-token: ${{ secrets.REPO_PAT }}
-          branch: 'master'
+          branch: 'main'
 
 
       - name: Updating values in helm
