@@ -115,13 +115,12 @@ jobs:
           access-token: ${{ secrets.REPO_PAT }}
           branch: 'main'
 
-
       - name: Updating values in helm
         run: |
-          cd go-app-devops
-          ls
-          sed -i 's/tag: .*/tag: "${{github.run_id}}"/' values.yaml
-
+            cd go-app-devops
+            ls -la charts/  # Debug
+            sed -i 's/tag: .*/tag: "${{github.run_id}}"/' charts/values.yaml
+            
       - name: Pushing changes
         run: |
           cd go-app-devops
